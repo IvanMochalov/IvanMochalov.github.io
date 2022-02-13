@@ -988,6 +988,9 @@ nav {
 .col5_5 {
 	height: 108px;
 }
+.col5_5a {
+	height: 108px;
+}
 .col6_5 {
 	height: 92px;
 	text-align: center;
@@ -1007,6 +1010,16 @@ nav {
     line-height: 48px;
     width: 100%;
     font-weight: bold;
+	padding-left: 2%;
+}
+
+.col5_5a input {
+    font-size: 16px;
+    line-height: 48px;
+    width: 100%;
+    font-weight: bold;
+	text-align: end;
+	padding-right: 2%;
 }
 
 .col6_5 input {

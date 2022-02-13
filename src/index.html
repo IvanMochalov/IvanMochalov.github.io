@@ -210,20 +210,57 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati esse, possimus iusto accusantium rerum tempora fuga, laudantium sequi.</p>
             </div>
             <div class="col2_4 col-12 element-animation">
-                <img src="img/%D1%84%D0%BE%D1%82%D0%BA%D0%B0%D0%9A%D0%B5%D0%B9%D1%81%D1%8B.png" alt="myproject">
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="img/main.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5><b>Главный экран сайта</b></h5>
+                          <p><em>Клиент начинает презентацию о себе</em></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item" data-bs-interval="2000">
+                        <img src="img/second.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5><b>От автора</b></h5>
+                          <p><em>Более подробный рассказ о себе.</em></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/third.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5><b>Достижения</b></h5>
+                          <p><em>Статистическая информация о заказах, клиентах и достижениях</em></p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Предыдущий</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Следующий</span>
+                    </button>
+                  </div>
             </div>
         </div>
         <div class="row_block4_2 d-flex">
             <div class="col3_4 col-lg-3 col-4 element-animation">
                 <h3>CLIENT:</h3>
-                <h4>Какая-то компания</h4>
+                <h4>Иван Мочалов</h4>
                 <h3>WEBSITE:</h3>
-                <h4>http://www.somedomain.com</h4>
+                <h4>Скоро будет)</h4>
                 <input type="button" value="VISIT LIVE SITE">
             </div>
             <div class="col4_4 col-lg-9 col-8 element-animation">
-                <h3>НАЗВАНИЕ ПРОЕКТА</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sequi quaerat odio voluptas, et ad quidem iure ex illo tempora aliquid magni eius assumenda aut autem itaque laboriosam sunt ut. Repellat voluptas, aperiam voluptatum ipsum inventore debitis quam alias quas qui in, fugiat adipisci praesentium cupiditate, magni blanditiis nam aut!</p>
+                <h3>САЙТ-ВИЗИТКА</h3>
+                <p>Начинающий web-designer решил сверстать себе сайт-визитку и выйти на рынок! И делал он это для себя, но далеко не один! В вёрстке ему помогал лучший наставник и просто хороший парень Андрей Волков!</p>
             </div>
         </div>
     </div>
@@ -247,40 +284,51 @@
                 </div>
                 
                 <div class="col2_5 col-10">
-                        <h3>ТИП САЙТА</h3>
-                        <select name="ТИП_САЙТА" id="typesite" required>
-                            <option seleckted="choice">Выберите тип сайта...</option>
-                            <option value="Opt1">Сайт визитка (+3000 руб)</option>
-                            <option value="Opt2">Интернет магазин (+5000 руб)</option>
-                            <option value="Opt3">Корпоративный сайт (+4000 руб)</option>
-                        </select>
-                </div>
-                <div class="col3_5 col-10">
-                        <h3>ДИЗАЙН</h3>
-                        <select name="ДИЗАЙН" id="design" required>
-                            <option seleckted="choice">Выберите дизайн...</option>
-                            <option value="Opt1">Уникальный дизайн (+5000 руб)</option>
-                            <option value="Opt2">Шаблонный дизайн (+3000 руб)</option>
-                            <option value="Opt3">Ретро дизайн (+4000 руб)</option>
-                        </select>
-                </div>
-                <div class="col4_5 col-10">
-                        <h3>АДАПТИВНОСТЬ</h3>
-                        <select name="АДАПТИВНОСТЬ" id="adaptability" required>
-                            <option seleckted="choice">Выберите тип ОС...</option>
-                            <option value="Opt1">Chrome 1.0+ (+3000 руб)</option>
-                            <option value="Opt2">iOS 1.0+ (+5000 руб)</option>
-                            <option value="Opt3">Firefox 1.0+ (+4000 руб)</option>
-                        </select>
-                </div>
-                <div class="col5_5 col-10">
-                        <section class="outcome">
+                    <h3>ТИП САЙТА</h3>
+                    <select id="TypeSite" required>
+                        <option seleckted="choice">Выберите тип сайта...</option>
+                        <option value="Сайт визитка">Сайт визитка</option>
+                        <option value="Интернет магазин">Интернет магазин</option>
+                        <option value="Корпоративный сайт">Корпоративный сайт</option>
+                    </select>
+            </div>
+            <div class="col3_5 col-10">
+                    <h3>ДИЗАЙН</h3>
+                    <select  id="DesignSite" required>
+                        <option seleckted="choice">Выберите дизайн...</option>
+                        <option value="Уникальный дизайн">Уникальный дизайн</option>
+                        <option value="Шаблонный дизайн">Шаблонный дизайн</option>
+                        <option value="Ретро дизайн">Ретро дизайн</option>
+                    </select>
+            </div>
+            <div class="col4_5 col-10">
+                    <h3>АДАПТИВНОСТЬ</h3>
+                    <select  id="AdaptiveSite" required>
+                        <option seleckted="choice">Выберите тип ОС...</option>
+                        <option value="Chrome 1.0+">Chrome 1.0+)</option>
+                        <option value="iOS 1.0+">iOS 1.0+</option>
+                        <option value="Firefox 1.0+">Firefox 1.0+</option>
+                    </select>
+            </div>
+            <div class="row_block5a d-flex align-items-center col-10">
+                <div class="col5_5 col-6">
+                    <section class="outcome">
 
-                        <input type="text" value="Сроки">
+                        <input  type="text" disabled value='Сроки (в сутках)'>
 
-                        <input type="text" value="Стоимость">
-                        </section>
+                        <input  type="text" disabled value='Стоимость (в рублях)'>
+                    </section>
                 </div>
+                <div class="col5_5a col-6">
+                    <section class="outcome">
+                        <div><input id="term" type="text" disabled value='0'></div>
+                        
+                        <div><input id="cost" type="text" disabled value='0'></div>
+                        
+                    </section>
+                </div>
+            </div>
+                
                 <div class="col6_5 col-10">
                         <input type="button" value="ОСТАВИТЬ ЗАЯВКУ">
                 </div>
@@ -444,34 +492,11 @@
         </div>
     </div>
 </footer>
-
-
-<script>
-    var number = document.querySelector('.number'),
-    numberTop = number.getBoundingClientRect().top,
-    start = +number.innerHTML, end = +number.dataset.max;
-
-    window.addEventListeber('scroll', function onScroll() {
-        if(window.pageYOffset > numberTop - window.innerHeight / 2) {
-            this.removeEventListener('scroll', onScroll);
-            var interval = setInterval(function() {
-                number.innerHTML = ++start;
-                if(start == end) {
-                    clearInterval(interval);
-                }
-            }, 5);
-        }
-    });
-</script>
-
-
 <script src="js/jquery-3.6.0.min.js">
 </script>
 <script src="js/bootstrap.bundle.min.js">
 </script>
 <script src="js/myScript.js">
 </script>
-
-
 </body>
 </html>
