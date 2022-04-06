@@ -11,6 +11,7 @@
     <title>Иван Мочалов - веб-разработчик</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.css">
@@ -210,42 +211,30 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati esse, possimus iusto accusantium rerum tempora fuga, laudantium sequi.</p>
             </div>
             <div class="col2_4 col-12 element-animation">
-                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
-                      <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="img/main.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5><b>Главный экран сайта</b></h5>
-                          <p><em>Клиент начинает презентацию о себе</em></p>
-                        </div>
-                      </div>
-                      <div class="carousel-item" data-bs-interval="2000">
-                        <img src="img/second.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5><b>От автора</b></h5>
-                          <p><em>Более подробный рассказ о себе.</em></p>
-                        </div>
+                      <div class="carousel-item active">
+                        <img class="image-link" src="img/first.png" href="img/first.png" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item">
-                        <img src="img/third.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5><b>Достижения</b></h5>
-                          <p><em>Статистическая информация о заказах, клиентах и достижениях</em></p>
-                        </div>
+                        <img class="image-link" src="img/second.png" href="img/second.png" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="image-link" src="img/third.png" href="img/third.png" class="d-block w-100" alt="...">
                       </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Предыдущий</span>
+                      <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Следующий</span>
+                      <span class="visually-hidden">Next</span>
                     </button>
                   </div>
             </div>
@@ -253,14 +242,15 @@
         <div class="row_block4_2 d-flex">
             <div class="col3_4 col-lg-3 col-4 element-animation">
                 <h3>CLIENT:</h3>
-                <h4>Иван Мочалов</h4>
+                <h4>Abode</h4>
                 <h3>WEBSITE:</h3>
-                <h4>Скоро будет)</h4>
-                <input type="button" value="VISIT LIVE SITE">
+                <h4>https://www.behance.net</h4>
+                <a href="https://www.behance.net/" target="blank"><input type="button" value="VISIT LIVE SITE"></a>
+                
             </div>
             <div class="col4_4 col-lg-9 col-8 element-animation">
-                <h3>САЙТ-ВИЗИТКА</h3>
-                <p>Начинающий web-designer решил сверстать себе сайт-визитку и выйти на рынок! И делал он это для себя, но далеко не один! В вёрстке ему помогал лучший наставник и просто хороший парень Андрей Волков!</p>
+                <h3>МЕДИА-ПЛАТФОРМА</h3>
+                <p>Онлайн-платформа, где представители творческих профессий оформляют профили и презентуют свои работы.</p>
             </div>
         </div>
     </div>
@@ -402,22 +392,43 @@
 
 <!--Поле_седьмого_блока-->
 <section class="main7 section" id="feedback">
-
+    
     <!--Седьмой_блок-->
     <div class="container title__container7 h-100">
         <div class="row_block7">
-            <div class="col1_7 col-lg-4 col-8 element-animation">
+            
+            <div class="col1_7 element-animation">
                 <h2>ОТЗЫВЫ</h2>
             </div>
-            <div class="col2_7 col-lg-2 element-animation"> 
-                <img src="img/anton_bad.jpg" data-src="img/anton.png" class="uploading-image img-fluid mx-auto d-block" alt="Ой, здесь должен быть мой брат">
-            </div>
-            <div class="col3_7 col-lg-8 col-10 element-animation">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla delectus, qui iusto fugit saepe dolor quaerat inventore, magni neque esse sapiente laborum ratione.<br> Facere iste autem architecto dolorum excepturi, quas temporibus, possimus in labore suscipit cum quidem rerum provident earum!</p>
-            </div>
-            <div class="col4_7 col-lg-4 col-8 element-animation">
-                <h4><b>Антон</b>, мой старший брат</h4>
-            </div>
+            
+           
+            <div class="slider">
+                <div class="slider_item">  
+                        <div class="col2_7 col-lg-2 element-animation mx-auto">  
+                            <img src="img/anton.png" data-src="img/anton.png" class="uploading-image img-fluid mx-auto d-block" alt="Ой, здесь должен быть мой брат">
+                        </div>
+                        <div class="col3_7 col-lg-8 col-10 element-animation mx-auto">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla delectus, qui iusto fugit saepe dolor quaerat inventore, magni neque esse sapiente laborum ratione.<br> Facere iste autem architecto dolorum excepturi, quas temporibus, possimus in labore suscipit cum quidem rerum provident earum!</p>
+                        </div>
+                        <div class="col4_7 col-lg-4 col-8 element-animation mx-auto">
+                            <h4><b>Антон</b>, мой старший брат</h4>
+                        </div>
+                  </div>
+                        
+                    <div class="slider_item">
+                        <div class="col2_7 col-lg-2 element-animation mx-auto">  
+                            <img src="img/aboutMe.png" data-src="img/aboutMe.png" class="uploading-image img-fluid mx-auto d-block" alt="Ой, здесь должен быть мой брат">
+                        </div>
+                        <div class="col3_7 col-lg-8 col-10 element-animation mx-auto">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla delectus, qui iusto fugit saepe dolor quaerat inventore.<br> Facere iste autem architecto dolorum excepturi, quas temporibus, possimus in labore suscipit cum quidem rerum provident earum!</p>
+                        </div>
+                        <div class="col4_7 col-lg-4 col-8 element-animation mx-auto">
+                            <h4><b>Иван</b>, да, это я</h4>
+                        </div>
+                    </div>
+                </div>
+            
+
         </div>    
     </div>
 
@@ -496,6 +507,9 @@
 </script>
 <script src="js/bootstrap.bundle.min.js">
 </script>
+<script src="js/slick.min.js">
+</script>
+<script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/myScript.js">
 </script>
 </body>

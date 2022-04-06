@@ -93,15 +93,11 @@ $(document).ready(function(){
 	} 
 
 // Предложение скидки
-let offer = setTimeout(function(){
-	alert("Как первому клиенту мы тебе сделаем СКИДКУ 30%!");
-}, 30000);
 
- // Предложение скидки при курсоре вне страницы (очень не удоюно XD)
-$('body').mouseleave(function(){
-	alert("Подожди, не уходи. Давай мы тебе сделаем СКИДКУ 50%!!!");
+
+$(document).ready(function() {
+	$('.image-link').magnificPopup({type:'image'});
 });
-
 
 // Колесо прогрузки пропадает после загрузки
 $(".loader").css('display', 'none');
@@ -239,8 +235,26 @@ $('select').change(function(){
 });
 $('select').change(function(){
 	$('#cost').val(calculator.cost);
+	let offer = setTimeout(function(){
+		alert("Как первому клиенту мы тебе сделаем СКИДКУ 50%!");
+		let calculator = {
+			order,
+			cost: (costType + costDesign + costAdaptive)*0.5,
+			term: termType + termDesign + termAdaptive,	
+		};
+		$('#cost').val(calculator.cost + " (с учетом скидки)");
+	}, 5000);
 });
 });
+$('.slider').slick({
+	arrows:false,
+	dots:true,
+	speed: 500,
+	fade: true,
+	cssEase: 'linear',
+});
+
+
 
 
 
