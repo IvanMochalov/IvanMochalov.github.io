@@ -305,16 +305,16 @@
                 <div class="col5_5 col-6">
                     <section class="outcome">
 
-                        <input  type="text" disabled value='Сроки (в сутках)' title="сутки">
+                        <input  type="text" value='Сроки (в сутках)' readonly title="сутки">
 
-                        <input  type="text" disabled value='Стоимость (в рублях)' title="рубли">
+                        <input  type="text" value='Стоимость (в рублях)' readonly title="рубли">
                     </section>
                 </div>
                 <div class="col5_5a col-6">
                     <section class="outcome">
-                        <div><input id="term" type="text" name="order_term" title="сутки" disabled value='0' form="user_form"></div>
+                        <div><input id="term" type="text" name="order_term" title="сутки" value='0' readonly form="user_form"></div>
                         
-                        <div><input id="cost" type="text" name="order_cost" title="рубли" disabled value='0' form="user_form"></div>
+                        <div><input id="cost" type="text" name="order_cost" title="рубли" value='0' readonly form="user_form"></div>
                         
                     </section>
                 </div>
@@ -480,7 +480,7 @@
                 </div>
                 <div class="row_block8_5 col-lg-8 offset-lg-2">
                     <div class="col9_8 col-12 p-2 element-animation">
-                        <textarea type="text" name="user_message" id="1" cols="30" rows="10" placeholder="Сообщение"></textarea>
+                        <textarea type="text" name="user_message" id="1" cols="30" rows="10" placeholder="Сообщение" autocomplete="off"></textarea>
                     </div>
                     <div class="col10_8 col-4 element-animation">
                         <input type="submit" value="Отправить">

@@ -304,6 +304,22 @@ $(document).ready(function(){
 // Плагиын для формы
 $("#inputTel").mask("+7 (999) 999-99-99");
 
+// Обработчик для функции отправки заявки на заказ
+$('#user_form').submit(function(event){
+	event.preventDefault();
+
+	$.ajax({
+		type: "POST",
+		url: "php/mail.php",
+		data: $(this).serialize()
+	}).done(function (){
+		$(this).find("input").val("");
+		alert("Успешно отправлено");
+		$("form").trigger("reset");
+	});
+	return false;
+});
+
 
 // Wow js код для запуска анимации на анимированных элементах после скрола до них
 // new WOW().init();
