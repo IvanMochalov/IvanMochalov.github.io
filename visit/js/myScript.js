@@ -34,7 +34,7 @@ $(document).ready(function(){
 		});
 	};
 	// Выделение разделов навигации
-	$(window).scroll(function(){
+	$(window).on("scroll",function(){
 	let scrollDistance = $(window).scrollTop();
 	$(".section").each((i, el) => {
 		if($(el).offset().top - $("nav").outerHeight() <= scrollDistance){
@@ -43,15 +43,16 @@ $(document).ready(function(){
 					$(el).removeClass("active");
 				}
 			});
-
-			$('nav li:eq('+ i +')').find('a').addClass('active');
+			if (i != 0){
+				$('nav li:eq('+ i +')').find('a').addClass('active');
+			}
 		}
 	});
 	});
 	// Отступ сверху для Якорных ссылок
-	$('a[href^="#"]').click(function(){
+	$('a[href^="#"]').on("click",function(){
 		let valHref = $(this).attr("href");
-		$('html, body').animate({scrollTop: $(valHref).offset().top - 40 + "px"});
+		$('html, body').animate({scrollTop: $(valHref).offset().top - 78 + "px"});
 	});
 	// Параметры демонстрации цифр в разделе "СТАТИСТИКА"
 	const time = 2500;
@@ -103,7 +104,7 @@ $(document).ready(function(){
 	$(".loader").css('display', 'none');
 
 	// Калькулятор раздела Расчет стоимости
-	let lastCost;
+	let lastCost = false;
 	let costType = 0;
 	let termType = 0;
 	let costDesign = 0;
@@ -115,8 +116,13 @@ $(document).ready(function(){
 		["Дизайн сайта", "Стоимость", "Срок"],
 		["Адаптив сайта", "Стоимость", "Срок"]
 	];
-	let cost = 0;
-	let term = 0;
+	let calculator = {
+		order,
+		cost: 0,
+		term: 0,	
+				
+	};
+	
 
 
 	// Выбор типа
@@ -145,19 +151,19 @@ $(document).ready(function(){
 		order[0][2] = termType;
 	}
 	console.log(order);
-	let calculator = {
+	calculator = {
 		order,
 		cost: costType + costDesign + costAdaptive,
 		term: termType + termDesign + termAdaptive,	
 	}
 	console.log(calculator);
-	$('select').change(function(){
+	$('select').on("change",function(){
 		$('#term').val(calculator.term);
 	});
-	$('select').change(function(){
+	$('select').on("change",function(){
 		$('#cost').val(calculator.cost);
 		if (lastCost){
-			let calculator = {
+			calculator = {
 				order,
 				cost: (costType + costDesign + costAdaptive)*0.5,
 				term: termType + termDesign + termAdaptive,	
@@ -193,19 +199,19 @@ $(document).ready(function(){
 		order[1][2] = termDesign;
 	}
 	console.log(order);
-	let calculator = {
+	calculator = {
 		order,
 		cost: costType + costDesign + costAdaptive,
 		term: termType + termDesign + termAdaptive,	
 	}
 	console.log(calculator);
-	$('select').change(function(){
+	$('select').on("change",function(){
 		$('#term').val(calculator.term);
 	});
-	$('select').change(function(){
+	$('select').on("change",function(){
 		$('#cost').val(calculator.cost);
 		if (lastCost){
-			let calculator = {
+			calculator = {
 				order,
 				cost: (costType + costDesign + costAdaptive)*0.5,
 				term: termType + termDesign + termAdaptive,	
@@ -241,19 +247,19 @@ $(document).ready(function(){
 		order[2][2] = termAdaptive;
 	}
 	console.log(order);
-	let calculator = {
+	calculator = {
 		order,
 		cost: costType + costDesign + costAdaptive,
 		term: termType + termDesign + termAdaptive,	
 	}
 	console.log(calculator);
-	$('select').change(function(){
+	$('select').on("change",function(){
 		$('#term').val(calculator.term);
 	});
-	$('select').change(function(){
+	$('select').on("change",function(){
 		$('#cost').val(calculator.cost);
 		if (lastCost){
-			let calculator = {
+			calculator = {
 				order,
 				cost: (costType + costDesign + costAdaptive)*0.5,
 				term: termType + termDesign + termAdaptive,	
@@ -262,29 +268,80 @@ $(document).ready(function(){
 		}
 	});
 	});
+	
+	// Слайдер в главном меню
+	$('.slider0').slick({
+		arrows: false,
+		dots: false,
+		fade: true,
+		autoplay: true,
+		speed: 500,
+		autoplaySpeed: 2000,
+		easing: 'ease',
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		centerMode: true,
+		adaptiveWidth: true,
+		infinite: true,
+	});
+	
+	// Слайдер раздела КЕЙСЫ
+	$('.slider1').slick({
+		arrows: true,
+		dots: false,
+		adaptiveHeight: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		speed: 1000,
+		easing: 'ease',
+		infinite: false,
+		initialSlide: 2,
+		autoplay: true,
+		autoplaySpeed: 6000,
+		pauseOnFocus: true,
+		draggable: false,
+		swipe: false,
+		touchMove: false,
+		asNavFor:".slider1_1"
+
+	});
+
+	$('.slider1_1').slick({
+		arrows: false,
+		dots: false,
+		fade: true,
+		initialSlide: 2,
+		speed: 1000,
+		infinite: false,
+		asNavFor:".slider1"
+	});
 
 	// Слайдер раздела ОТЗЫВЫ 
-	$('.slider').slick({
+	$('.slider2').slick({
 		arrows:false,
-		dots:true,
-		speed: 1000,
 		fade: true,
-		cssEase: 'linear',
+		dots:true,
+		speed: 500,
+		easing: 'ease',
 		infinite: true,
 		autoplay: true,
-		autoplaySpeed: 3000,
+		autoplaySpeed: 6000,
+		pauseOnFocus: true,
 		pauseOnHover: false,
 		pauseOnDotsHover: true,
 		waitForAnimate: true,
+		centerMode: true,
 
 	});
 
 	
 	// Предложение скидки
+	/*
 	let showDiscount = setInterval(function(){
 		if ($("#TypeSite option:selected").val() !== "Выберите..." && $("#DesignSite option:selected").val() !== "Выберите..." && $("#AdaptiveSite option:selected").val() !== "Выберите...") {
 			let offer = setTimeout(function(){
-			if (confirm("Как первому клиенту мы тебе сделаем СКИДКУ 50%!")){
+
+			if (confirm("Как первому клиенту мы тебе предлагаем СКИДКУ 50%!")){
 				let calculator = {
 				order,
 				cost: (costType + costDesign + costAdaptive)*0.5,
@@ -300,12 +357,15 @@ $(document).ready(function(){
 				clearInterval(showDiscount);
 				}
 			}, 1000);
-	
+	*/
 // Плагиын для формы
 $("#inputTel").mask("+7 (999) 999-99-99");
 
+
+
+
 // Обработчик для функции отправки заявки на заказ
-$('#user_form').submit(function(event){
+$('#user_form').on("submit",function(event){
 	event.preventDefault();
 
 	$.ajax({
@@ -314,8 +374,12 @@ $('#user_form').submit(function(event){
 		data: $(this).serialize()
 	}).done(function (){
 		$(this).find("input").val("");
-		alert("Успешно отправлено");
-		$("form").trigger("reset");
+		$('.btn-primary')[0].click();
+		$("#user_form").trigger("reset");
+		calculator.cost = 0;
+		calculator.term = 0;
+		calculator.order = 0;
+		console.log(calculator);
 	});
 	return false;
 });
