@@ -162,6 +162,7 @@ $(document).ready(function(){
 	});
 	$('select').on("change",function(){
 		$('#cost').val(calculator.cost);
+		/* При наличии скидки
 		if (lastCost){
 			calculator = {
 				order,
@@ -169,7 +170,7 @@ $(document).ready(function(){
 				term: termType + termDesign + termAdaptive,	
 				};
 				$('#cost').val(calculator.cost + " (с учетом скидки)");
-		}
+		}*/
 	});
 	});
 	// Выбор дизайна
@@ -210,6 +211,7 @@ $(document).ready(function(){
 	});
 	$('select').on("change",function(){
 		$('#cost').val(calculator.cost);
+		/* При наличии скидки
 		if (lastCost){
 			calculator = {
 				order,
@@ -217,7 +219,7 @@ $(document).ready(function(){
 				term: termType + termDesign + termAdaptive,	
 				};
 				$('#cost').val(calculator.cost + " (с учетом скидки)");
-		}
+		}*/
 	});
 	});
 	// Выбор адаптива
@@ -258,6 +260,7 @@ $(document).ready(function(){
 	});
 	$('select').on("change",function(){
 		$('#cost').val(calculator.cost);
+		/* При наличии скидки
 		if (lastCost){
 			calculator = {
 				order,
@@ -265,75 +268,11 @@ $(document).ready(function(){
 				term: termType + termDesign + termAdaptive,	
 				};
 				$('#cost').val(calculator.cost + " (с учетом скидки)");
-		}
+		}*/
 	});
 	});
 	
-	// Слайдер в главном меню
-	$('.slider0').slick({
-		arrows: false,
-		dots: false,
-		fade: true,
-		autoplay: true,
-		speed: 500,
-		autoplaySpeed: 2000,
-		easing: 'ease',
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		centerMode: true,
-		adaptiveWidth: true,
-		infinite: true,
-	});
 	
-	// Слайдер раздела КЕЙСЫ
-	$('.slider1').slick({
-		arrows: true,
-		dots: false,
-		adaptiveHeight: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		speed: 1000,
-		easing: 'ease',
-		infinite: false,
-		initialSlide: 2,
-		autoplay: true,
-		autoplaySpeed: 6000,
-		pauseOnFocus: true,
-		draggable: false,
-		swipe: false,
-		touchMove: false,
-		asNavFor:".slider1_1"
-
-	});
-
-	$('.slider1_1').slick({
-		arrows: false,
-		dots: false,
-		fade: true,
-		initialSlide: 2,
-		speed: 1000,
-		infinite: false,
-		asNavFor:".slider1"
-	});
-
-	// Слайдер раздела ОТЗЫВЫ 
-	$('.slider2').slick({
-		arrows:false,
-		fade: true,
-		dots:true,
-		speed: 500,
-		easing: 'ease',
-		infinite: true,
-		autoplay: true,
-		autoplaySpeed: 6000,
-		pauseOnFocus: true,
-		pauseOnHover: false,
-		pauseOnDotsHover: true,
-		waitForAnimate: true,
-		centerMode: true,
-
-	});
-
 	
 	// Предложение скидки
 	/*
@@ -342,13 +281,14 @@ $(document).ready(function(){
 			let offer = setTimeout(function(){
 
 			if (confirm("Как первому клиенту мы тебе предлагаем СКИДКУ 50%!")){
+				lastCost = true;
 				let calculator = {
 				order,
 				cost: (costType + costDesign + costAdaptive)*0.5,
 				term: termType + termDesign + termAdaptive,	
 				};
 				$('#cost').val(calculator.cost + " (с учетом скидки)");
-				lastCost = true;
+				
 			}
 			else {
 				lastCost = false;
@@ -358,10 +298,6 @@ $(document).ready(function(){
 				}
 			}, 1000);
 	*/
-// Плагиын для формы
-$("#inputTel").mask("+7 (999) 999-99-99");
-
-
 
 
 // Обработчик для функции отправки заявки на заказ
@@ -382,6 +318,77 @@ $('#user_form').on("submit",function(event){
 		console.log(calculator);
 	});
 	return false;
+});
+
+// Плагиын для формы
+$("#inputTel").mask("+7 (999) 999-99-99");
+
+
+
+
+// Слайдер в главном меню
+$('.slider0').slick({
+	arrows: false,
+	dots: false,
+	fade: true,
+	autoplay: true,
+	speed: 500,
+	autoplaySpeed: 2000,
+	easing: 'ease',
+	pauseOnFocus: false,
+	pauseOnHover: false,
+	centerMode: true,
+	adaptiveWidth: true,
+	infinite: true,
+});
+
+// Слайдер раздела КЕЙСЫ
+$('.slider1').slick({
+	arrows: true,
+	dots: false,
+	adaptiveHeight: true,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	speed: 1000,
+	easing: 'ease',
+	infinite: false,
+	initialSlide: 2,
+	autoplay: true,
+	autoplaySpeed: 6000,
+	pauseOnFocus: true,
+	draggable: false,
+	swipe: false,
+	touchMove: false,
+	asNavFor:".slider1_1"
+
+});
+// Слайдер подписей в разделе КЕЙСЫ
+$('.slider1_1').slick({
+	arrows: false,
+	dots: false,
+	fade: true,
+	initialSlide: 2,
+	speed: 1000,
+	infinite: false,
+	asNavFor:".slider1"
+});
+
+// Слайдер раздела ОТЗЫВЫ 
+$('.slider2').slick({
+	arrows:false,
+	fade: true,
+	dots:true,
+	speed: 500,
+	easing: 'ease',
+	infinite: true,
+	autoplay: true,
+	autoplaySpeed: 6000,
+	pauseOnFocus: true,
+	pauseOnHover: false,
+	pauseOnDotsHover: true,
+	waitForAnimate: true,
+	centerMode: true,
+
 });
 
 
