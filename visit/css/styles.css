@@ -1019,6 +1019,11 @@ box-shadow:  10px 10px 20px #b3b3b3,
     transform: scale(1);
 }
 
+.col3_8 a{
+	color: #484848;
+	text-decoration: none;
+}
+
 .col3_8:hover {
     transform: scale(1.08);
 }
@@ -1032,6 +1037,11 @@ box-shadow:  10px 10px 20px #b3b3b3,
     transform: scale(1);
 }
 
+.col4_8 a{
+	color: #484848;
+	text-decoration: none;
+}
+
 .col4_8:hover {
     transform: scale(1.08);
 }
@@ -1043,6 +1053,11 @@ box-shadow:  10px 10px 20px #b3b3b3,
 .col5_8{
     transition: transform 0.2s !important;
     transform: scale(1);
+}
+
+.col5_8 a{
+	color: #484848;
+	text-decoration: none;
 }
 
 .col5_8:hover {
